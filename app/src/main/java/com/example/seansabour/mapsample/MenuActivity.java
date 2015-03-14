@@ -35,11 +35,12 @@ import android.view.View;
             startActivity(i);
 
         }
-        else if(v.getId() == R.id.parking_button)
+        /*else if(v.getId() == R.id.parking_button)
         {
             Intent i = new Intent(this, ParkingActivity.class);
             startActivity(i);
 
         }
+        */
     }
 }

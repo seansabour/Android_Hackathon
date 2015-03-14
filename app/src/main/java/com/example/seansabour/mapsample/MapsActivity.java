@@ -1,11 +1,9 @@
 package com.example.seansabour.mapsample;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -89,6 +87,8 @@ public class MapsActivity extends FragmentActivity {
 
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 20));
+        mMap.setMyLocationEnabled(true);
+        mMap.setBuildingsEnabled(true);
         //mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(CSUMB, 36.540659,-121.7999387,0));
 
         /*
@@ -115,8 +115,7 @@ public class MapsActivity extends FragmentActivity {
     }
 
     private void createMarkers() {
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
+
         mMyMarkersArray.add(new MyMarker("Aquatic Center",Double.parseDouble("36.652823"),Double.parseDouble("-121.8061783")));
         mMyMarkersArray.add(new MyMarker("University Center - Gym",Double.parseDouble("36.6545359"),Double.parseDouble("-121.8058242")));
         mMyMarkersArray.add(new MyMarker("Ocean Hall",Double.parseDouble("36.6545359"),Double.parseDouble("-121.8058242")));
