@@ -91,9 +91,6 @@ public class MapsActivity extends FragmentActivity {
 
         mMap.setMyLocationEnabled(true);
         mMap.setBuildingsEnabled(true);
-
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
         //mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(CSUMB, 36.540659,-121.7999387,0));
 
 
