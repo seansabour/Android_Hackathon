@@ -89,7 +89,9 @@ public class MapsActivity extends FragmentActivity {
 
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 20));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(CSUMB, 36.540659,-121.7999387,0));
+
+        mMap.setMyLocationEnabled(true);
+        mMap.setBuildingsEnabled(true);
 
         /*
         Marker mediaLearning = mMap.addMarker(new MarkerOptions()
@@ -115,39 +117,37 @@ public class MapsActivity extends FragmentActivity {
     }
 
     private void createMarkers() {
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
-        mMyMarkersArray.add(new MyMarker("Aquatic Center",Double.parseDouble("36.652823"),Double.parseDouble("-121.8061783")));
-        mMyMarkersArray.add(new MyMarker("University Center - Gym",Double.parseDouble("36.6545359"),Double.parseDouble("-121.8058242")));
-        mMyMarkersArray.add(new MyMarker("Ocean Hall",Double.parseDouble("36.6545359"),Double.parseDouble("-121.8058242")));
-        mMyMarkersArray.add(new MyMarker("Mountain Hall",Double.parseDouble("36.6550265"),Double.parseDouble("-121.8046977")));
-        mMyMarkersArray.add(new MyMarker("Valley Hall",Double.parseDouble("36.6550093"),Double.parseDouble("-121.8043437")));
-        mMyMarkersArray.add(new MyMarker("Black Box Cabaret",Double.parseDouble("36.6554353"),Double.parseDouble("-121.80348")));
-        mMyMarkersArray.add(new MyMarker("Health & Wellness Services",Double.parseDouble("36.6552116"),Double.parseDouble("-121.8032064")));
-        mMyMarkersArray.add(new MyMarker("Alunmi & Visitors Center",Double.parseDouble("36.6541615"),Double.parseDouble("-121.8009051")));
+        mMyMarkersArray.add(new MyMarker("Aquatic Center",Double.parseDouble("36.651461"),Double.parseDouble("-121.807472")));
+        mMyMarkersArray.add(new MyMarker("Otter Sports Complex",Double.parseDouble("36.654419"),Double.parseDouble("-121.808296")));
+        mMyMarkersArray.add(new MyMarker("Ocean Hall",Double.parseDouble("36.655620"),Double.parseDouble("-121.807188")));
+        mMyMarkersArray.add(new MyMarker("Mountain Hall",Double.parseDouble("36.655415"),Double.parseDouble("-121.806263")));
+        mMyMarkersArray.add(new MyMarker("Valley Hall",Double.parseDouble("36.655388"),Double.parseDouble("-121.804368")));
+        mMyMarkersArray.add(new MyMarker("Black Box Cabaret",Double.parseDouble("36.655748"),Double.parseDouble("-121.803672")));
+        mMyMarkersArray.add(new MyMarker("Health & Wellness Services",Double.parseDouble("36.655575"),Double.parseDouble("-121.803177")));
+        mMyMarkersArray.add(new MyMarker("Alunmi & Visitors Center",Double.parseDouble("36.654446"),Double.parseDouble("-121.801787")));
         mMyMarkersArray.add(new MyMarker("Meeting House",Double.parseDouble("36.6532752"),Double.parseDouble("-121.8015193")));
-        mMyMarkersArray.add(new MyMarker("Tide Hall",Double.parseDouble("36.6527093"),Double.parseDouble("-121.799918")));
-        mMyMarkersArray.add(new MyMarker("Beach Hall",Double.parseDouble("36.6527093"),Double.parseDouble("-121.799918")));
-        mMyMarkersArray.add(new MyMarker("Media Learning Center",Double.parseDouble("36.654184"),Double.parseDouble("-121.7993494")));
+        mMyMarkersArray.add(new MyMarker("Tide Hall",Double.parseDouble("36.652632"),Double.parseDouble("-121.800238")));
+        mMyMarkersArray.add(new MyMarker("Beach Hall",Double.parseDouble("36.652631"),Double.parseDouble("-121.799177")));
+        mMyMarkersArray.add(new MyMarker("Media Learning Center",Double.parseDouble("36.654248"),Double.parseDouble("-121.799848")));
         mMyMarkersArray.add(new MyMarker("CSUMB Dining Commons",Double.parseDouble("36.6541828"),Double.parseDouble("-121.7988633")));
-        mMyMarkersArray.add(new MyMarker("Otter Express",Double.parseDouble("36.6537524"),Double.parseDouble("-121.7979138")));
-        mMyMarkersArray.add(new MyMarker("Student Center",Double.parseDouble("36.6536104"),Double.parseDouble("-121.7975007")));
+        mMyMarkersArray.add(new MyMarker("Otter Express",Double.parseDouble("36.654212"),Double.parseDouble("-121.798234")));
+        mMyMarkersArray.add(new MyMarker("Student Center",Double.parseDouble("36.654151"),Double.parseDouble("-121.797485")));
         mMyMarkersArray.add(new MyMarker("College of Professional Studies",Double.parseDouble("36.6530531"),Double.parseDouble("-121.7981156")));
         mMyMarkersArray.add(new MyMarker("Institutional Assessment and Research",Double.parseDouble("36.653569"),Double.parseDouble("-121.7973364")));
         mMyMarkersArray.add(new MyMarker("Starbucks",Double.parseDouble("36.6542463"),Double.parseDouble("-121.7974028")));
-        mMyMarkersArray.add(new MyMarker("Journalism and Media Studies",Double.parseDouble("6535969"),Double.parseDouble("-121.7960905")));
+        mMyMarkersArray.add(new MyMarker("Journalism and Media Studies",Double.parseDouble("36.653584"),Double.parseDouble("-121.796068")));
         mMyMarkersArray.add(new MyMarker("Visual and Public Art (VPA) West",Double.parseDouble("36.6553447"),Double.parseDouble("-121.7959571")));
         mMyMarkersArray.add(new MyMarker("Visual and Public Art",Double.parseDouble("36.6553109"),Double.parseDouble("-121.7956232")));
         mMyMarkersArray.add(new MyMarker("Visual and Public Art (VPA) East",Double.parseDouble("36.6553404"),Double.parseDouble("-121.7952671")));
         mMyMarkersArray.add(new MyMarker("CSUMB Library",Double.parseDouble("36.6523091"),Double.parseDouble("-121.7961904")));
-        mMyMarkersArray.add(new MyMarker("Chapman Science Academic Center",Double.parseDouble("36.6534797"),Double.parseDouble("-121.7943773")));
-        mMyMarkersArray.add(new MyMarker("University Corporation",Double.parseDouble("36.6535055"),Double.parseDouble("-121.7935511")));
+        mMyMarkersArray.add(new MyMarker("Chapman Science Academic Center",Double.parseDouble("36.653323"),Double.parseDouble("-121.794764")));
+        mMyMarkersArray.add(new MyMarker("University Corporation",Double.parseDouble("36.654399"),Double.parseDouble("-121.792962")));
         mMyMarkersArray.add(new MyMarker("Science Instructional Lab Annex",Double.parseDouble("36.6530445"),Double.parseDouble("-121.7927753")));
-        mMyMarkersArray.add(new MyMarker("Oaks Hall",Double.parseDouble("36.654469"),Double.parseDouble("-121.7924105")));
+        mMyMarkersArray.add(new MyMarker("Oaks Hall",Double.parseDouble("36.654970"),Double.parseDouble("-121.792147")));
         mMyMarkersArray.add(new MyMarker("Science Research Lab Annex",Double.parseDouble("36.6526254"),Double.parseDouble("-121.793932")));
         mMyMarkersArray.add(new MyMarker("World Languages and Cultures - North Building",Double.parseDouble("36.6525662"),Double.parseDouble("-121.792597")));
-        mMyMarkersArray.add(new MyMarker("Reading Center",Double.parseDouble("36.652351"),Double.parseDouble("-121.792023")));
-        mMyMarkersArray.add(new MyMarker("Green Hall",Double.parseDouble("36.6523553"),Double.parseDouble("-121.7914919")));
+        mMyMarkersArray.add(new MyMarker("Reading Center",Double.parseDouble("36.652550"),Double.parseDouble("-121.790589")));
+        mMyMarkersArray.add(new MyMarker("Green Hall",Double.parseDouble("36.652071"),Double.parseDouble("-121.790506")));
         mMyMarkersArray.add(new MyMarker("World Languages and Cultures - South",Double.parseDouble("36.6520842"),Double.parseDouble("-121.7926861")));
         mMyMarkersArray.add(new MyMarker("Cinematic Arts and Technology Building",Double.parseDouble("36.65184"),Double.parseDouble("-121.793867")));
         mMyMarkersArray.add(new MyMarker("Student Services Building",Double.parseDouble("36.6516253"),Double.parseDouble("-121.792953")));
@@ -157,12 +157,13 @@ public class MapsActivity extends FragmentActivity {
         mMyMarkersArray.add(new MyMarker("Pacific Hall",Double.parseDouble("36.6502615"),Double.parseDouble("-121.7927532")));
         mMyMarkersArray.add(new MyMarker("University Center(Montes)",Double.parseDouble("36.6499899"),Double.parseDouble("-121.7942438")));
         mMyMarkersArray.add(new MyMarker("CSUMB Book Store",Double.parseDouble("36.6498828"),Double.parseDouble("-121.7939401")));
-        mMyMarkersArray.add(new MyMarker("Watershed Institute",Double.parseDouble("36.649808"),Double.parseDouble("-121.6926191")));
+        mMyMarkersArray.add(new MyMarker("Watershed Institute",Double.parseDouble("36.649820"),Double.parseDouble("-121.792586")));
         mMyMarkersArray.add(new MyMarker("Camp SEA Lab",Double.parseDouble("36.6496057"),Double.parseDouble("-121.792772")));
         mMyMarkersArray.add(new MyMarker("IT Services",Double.parseDouble("36.6492959"),Double.parseDouble("-121.7931314")));
         mMyMarkersArray.add(new MyMarker("Music Hall",Double.parseDouble("36.6479127"),Double.parseDouble("-121.7944665")));
-        mMyMarkersArray.add(new MyMarker("Sand Hall",Double.parseDouble("36.6529993"),Double.parseDouble("-121.8000474")));
-        mMyMarkersArray.add(new MyMarker("Dunes Hall",Double.parseDouble("36.653335"),Double.parseDouble("-121.7991247")));
+        mMyMarkersArray.add(new MyMarker("Sand Hall",Double.parseDouble("36.653509"),Double.parseDouble("-121.799320")));
+        mMyMarkersArray.add(new MyMarker("Facilities Services and Operations",Double.parseDouble("36.648980"),Double.parseDouble("-121.787847")));
+        mMyMarkersArray.add(new MyMarker("Dunes Hall",Double.parseDouble("36.653669"),Double.parseDouble("-121.800662")));
 
     }
 
