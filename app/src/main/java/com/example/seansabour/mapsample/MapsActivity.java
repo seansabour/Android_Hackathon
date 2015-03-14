@@ -168,7 +168,6 @@ public class MapsActivity extends FragmentActivity {
         mMyMarkersArray.add(new MyMarker("Sand Hall",Double.parseDouble("36.653509"),Double.parseDouble("-121.799320")));
         mMyMarkersArray.add(new MyMarker("Facilities Services and Operations",Double.parseDouble("36.648980"),Double.parseDouble("-121.787847")));
         mMyMarkersArray.add(new MyMarker("Dunes Hall",Double.parseDouble("36.653669"),Double.parseDouble("-121.800662")));
-
     }
 
     private class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
