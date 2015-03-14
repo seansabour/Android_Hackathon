@@ -5,11 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.seansabour.mapsample.DiningActivity;
-import com.example.seansabour.mapsample.MapsActivity;
-import com.example.seansabour.mapsample.ParkingActivity;
-import com.example.seansabour.mapsample.R;
-
 /**
  * Created by maritzaabzun on 3/14/15.
  */public class MenuActivity extends Activity implements View.OnClickListener {
