@@ -1,10 +1,11 @@
-package com.example.jose.mapssample;
+package com.example.seansabour.mapsample;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.seansabour.mapsample.DiningActivity;
 import com.example.seansabour.mapsample.MapsActivity;
 import com.example.seansabour.mapsample.ParkingActivity;
 import com.example.seansabour.mapsample.R;
@@ -35,7 +36,7 @@ import com.example.seansabour.mapsample.R;
         }
         else if(v.getId() == R.id.dining_button)
         {
-            Intent i = new Intent(this, com.example.jose.mapssample.DiningActivity.class);
+            Intent i = new Intent(this, DiningActivity.class);
             startActivity(i);
 
         }

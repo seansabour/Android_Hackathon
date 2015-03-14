@@ -1,14 +1,9 @@
-package com.example.jose.mapssample;
+package com.example.seansabour.mapsample;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
-import com.example.seansabour.mapsample.DiningCommonsActivity;
-import com.example.seansabour.mapsample.MontesActivity;
-import com.example.seansabour.mapsample.OtterExpressActivity;
-import com.example.seansabour.mapsample.R;
 
 /**
  * Created by maritzaabzun on 3/14/15.
