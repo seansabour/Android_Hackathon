@@ -17,6 +17,10 @@
     <string name="OE_button">Otter Express</string>
     <string name="DC_button">Dining Commons</string>
     <string name="Montes_button">Montes Restaurant</string>
+    <string name="title_activity_dining">DiningActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 
 </resources>
