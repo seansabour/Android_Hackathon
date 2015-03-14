@@ -22,7 +22,7 @@
         android:text="@string/dining_button" />
     <Button
         android:id="@+id/parking_button"
-        android:layout_width="fill_parent"
+        android:layaout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/parking_button" />
 
