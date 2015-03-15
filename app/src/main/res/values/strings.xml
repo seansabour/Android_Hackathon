@@ -18,11 +18,6 @@
     <string name="DC_button">Dining Commons</string>
     <string name="Montes_button">Montes Restaurant</string>
     <string name="title_activity_dining">DiningActivity</string>
-<<<<<<< HEAD
-
-=======
-    <string name="hello_world">Hello world!</string>
->>>>>>> parent of d60e9a0... Merge remote-tracking branch 'origin/master'
     <string name="action_settings">Settings</string>
 
 

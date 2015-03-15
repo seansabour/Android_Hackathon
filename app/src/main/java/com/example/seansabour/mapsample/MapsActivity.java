@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -86,43 +85,6 @@ public class MapsActivity extends FragmentActivity {
             });
 
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-<<<<<<< HEAD
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 17));
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659, -121.7999387), 17));
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 20));
-
-
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
-=======
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 20));
-
-
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
->>>>>>> parent of d60e9a0... Merge remote-tracking branch 'origin/master'
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(CSUMB, 36.540659,-121.7999387,0));
-
-
-        /*
-        Marker mediaLearning = mMap.addMarker(new MarkerOptions()
-                .position(MLC)
-                .title("Media Learning Center")
-                .snippet("This building is where Computer Science and Communication Design classes are held."));
-
-        */
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> parent of d60e9a0... Merge remote-tracking branch 'origin/master'
     }
 
     private void plotMarkers(ArrayList<MyMarker> markers){
