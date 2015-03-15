@@ -20,8 +20,7 @@ import java.util.HashMap;
 
 public class MapsActivity extends FragmentActivity {
    private HashMap<Marker,MyMarker> mMarkersHashMap = mMarkersHashMap = new HashMap<Marker,MyMarker>();
-   private ArrayList<Integer> intgers = new ArrayList<Integer>();
-   private ArrayList<MyMarker> mMyMarkersArray= new ArrayList<MyMarker>();
+    private ArrayList<MyMarker> mMyMarkersArray= new ArrayList<MyMarker>();
    private GoogleMap mMap; // Might be null if Google Play services APK is not available.
    private Marker currentMarker;
    private static double latitude;
@@ -98,42 +97,20 @@ public class MapsActivity extends FragmentActivity {
             });
 
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-<<<<<<< HEAD
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659, -121.7999387), 17));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 17));
         mMap.setMyLocationEnabled(true);
         mMap.setBuildingsEnabled(true);
-=======
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 20));
-
-
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(CSUMB, 36.540659,-121.7999387,0));
-
-
-        /*
-        Marker mediaLearning = mMap.addMarker(new MarkerOptions()
-                .position(MLC)
-                .title("Media Learning Center")
-                .snippet("This building is where Computer Science and Communication Design classes are held."));
-
-        */
-
->>>>>>> origin/master
     }
 
     private void plotMarkers(ArrayList<MyMarker> markers){
-        int i = 0;
         if(markers.size() > 0) {
             for( MyMarker myMarker: markers) {
 
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(),myMarker.getmLongitude()));
-                intgers.add(i);
                 currentMarker = mMap.addMarker(markerOption);
                 mMarkersHashMap.put(currentMarker,myMarker);
 
                 mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter());
-                i++;
             }
         }
     }

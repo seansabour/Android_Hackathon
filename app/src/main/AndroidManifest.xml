@@ -24,6 +24,7 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu" >
@@ -41,6 +42,10 @@
         <activity
             android:name=".DiningActivity"
             android:label="@string/title_activity_dining" >
+        </activity>
+        <activity
+            android:name=".OtterExpressActivity"
+            android:label="@string/title_activity_otter_express" >
         </activity>
     </application>
 
