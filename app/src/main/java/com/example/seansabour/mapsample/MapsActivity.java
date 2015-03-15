@@ -1,15 +1,16 @@
 package com.example.seansabour.mapsample;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -19,21 +20,32 @@ import java.util.HashMap;
 
 public class MapsActivity extends FragmentActivity {
    private HashMap<Marker,MyMarker> mMarkersHashMap = mMarkersHashMap = new HashMap<Marker,MyMarker>();
+   private ArrayList<Integer> intgers = new ArrayList<Integer>();
    private ArrayList<MyMarker> mMyMarkersArray= new ArrayList<MyMarker>();
-
-
-    static final LatLng MLC = new LatLng(36.654184, -121.799842);
-    private GoogleMap mMap; // Might be null if Google Play services APK is not available.
-
-    private LatLngBounds CSUMB = new LatLngBounds(new LatLng(36.649313, -121.792433), new LatLng(36.654670, -121.802503));
+   private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+   private Marker currentMarker;
+   private static double latitude;
+   private static double longitude;
+   private static GPSTracker gps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        // Update current location of device
+        gps = new GPSTracker(this);
+        gps.updateGPSCoordinates();
+        latitude = gps.getLatitude();
+        longitude = gps.getLongitude();
+
+        // Create Markers
         createMarkers();
+
+        //
         setUpMapIfNeeded();
         plotMarkers(mMyMarkersArray);
+
     }
 
     @Override
@@ -86,36 +98,23 @@ public class MapsActivity extends FragmentActivity {
             });
 
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659,-121.7999387), 20));
-
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(36.6540659, -121.7999387), 17));
         mMap.setMyLocationEnabled(true);
         mMap.setBuildingsEnabled(true);
-
-        mMap.setMyLocationEnabled(true);
-        mMap.setBuildingsEnabled(true);
-        //mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(CSUMB, 36.540659,-121.7999387,0));
-
-
-        /*
-        Marker mediaLearning = mMap.addMarker(new MarkerOptions()
-                .position(MLC)
-                .title("Media Learning Center")
-                .snippet("This building is where Computer Science and Communication Design classes are held."));
-
-        */
-
     }
 
     private void plotMarkers(ArrayList<MyMarker> markers){
+        int i = 0;
         if(markers.size() > 0) {
             for( MyMarker myMarker: markers) {
 
                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(myMarker.getmLatitude(),myMarker.getmLongitude()));
-                Marker currentMarker = mMap.addMarker(markerOption);
+                intgers.add(i);
+                currentMarker = mMap.addMarker(markerOption);
                 mMarkersHashMap.put(currentMarker,myMarker);
 
                 mMap.setInfoWindowAdapter(new MarkerInfoWindowAdapter());
+                i++;
             }
         }
     }
@@ -171,25 +170,63 @@ public class MapsActivity extends FragmentActivity {
     }
 
     private class MarkerInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
-        public MarkerInfoWindowAdapter() { }
+        public MarkerInfoWindowAdapter() {        }
 
         @Override
-        public View getInfoWindow(Marker marker) { return null; }
-
-        @Override
-        public View getInfoContents(Marker marker)
-        {
+        public View getInfoWindow(Marker marker) {
             View v  = getLayoutInflater().inflate(R.layout.infowindow_layout, null);
+            Button button = (Button) v.findViewById(R.id.button_send);
+            final Marker m = marker;
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(Marker marker) {
+                    handleMarkerClick(m);
+                }
+            });
+
 
             MyMarker myMarker = mMarkersHashMap.get(marker);
 
             TextView markerLabel = (TextView)v.findViewById(R.id.marker_label);
-
-            markerLabel.setText(myMarker.getName());
+            String buildName = myMarker.getName();
             TextView anotherLabel = (TextView)v.findViewById(R.id.another_label);
-            anotherLabel.setText("A Customer text");
-
+            anotherLabel.setText(buildName);
             return v;
+
+        }
+
+        @Override
+        public View getInfoContents(Marker marker)
+        {
+            return null;
         }
     }
+
+    public void handleMarkerClick(Marker marker) {
+
+        //get location from marker that was clicked...
+        LatLng latlng = marker.getPosition();
+        String goToLatitude = latlng.latitude+"";
+        String goToLongitude = latlng.longitude+"";
+
+        //get devices current location...
+        String comeFromLatitude = ""+latitude;
+        String comeFromLongitude = ""+longitude;
+
+        View v  = getLayoutInflater().inflate(R.layout.infowindow_layout, null);
+        try{
+
+            Uri uri = Uri.parse("http://maps.google.com/maps?saddr=" + comeFromLatitude + "," + comeFromLongitude + "&daddr=" + goToLatitude  + "," + goToLongitude);
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+
+        }catch(Exception e){
+
+            //log exception...
+
+        }
+
+    }
+
 }
