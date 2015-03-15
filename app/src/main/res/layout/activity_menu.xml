@@ -2,28 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dip">
+    android:gravity="center"
+    android:weightSum="1"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:layout_width="395dp"
+        android:layout_height="206dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/otter"
+        android:layout_weight="0.47"/>
+
     <TextView
         android:id="@+id/about_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="318dp"
         android:layout_height="wrap_content"
         android:text="@string/menu_about"
-        />
+        android:textSize="35sp"
+        android:textColor="#002A4E"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:shadowColor="#E0E2EF"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="2"/>
 
     <Button
         android:id="@+id/map_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/map_button" />
+        android:layout_width="275dp"
+        android:layout_height="70dp"
+        android:text="@string/map_button"
+        android:textSize="50sp"
+        android:textColor="#CFB53B"
+        android:layout_margin="10dp"
+        android:background = "@drawable/roundbutton"
+        android:typeface="serif"/>
+
     <Button
         android:id="@+id/dining_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/dining_button" />
+        android:layout_width="275dp"
+        android:layout_height="70dp"
+        android:text="@string/dining_button"
+        android:background = "@drawable/roundbutton"
+        android:textSize="52sp"
+        android:textColor="#CFB53B"
+        android:layout_margin="10dp"
+        android:typeface="serif"/>
+
     <Button
         android:id="@+id/parking_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/parking_button" />
+        android:layout_width="275dp"
+        android:layout_height="70dp"
+        android:text="@string/parking_button"
+        android:background = "@drawable/roundbutton"
+        android:textSize="50sp"
+        android:textColor="#CFB53B"
+        android:layout_margin="10dp"
+        android:typeface="serif"/>
 
 </LinearLayout>

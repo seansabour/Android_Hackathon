@@ -9,7 +9,7 @@
     <string name="title_activity_parking">Parking</string>
 
 
-    <string name="menu_about">Hello, welcome to CSUMB.</string>
+    <string name="menu_about">Welcome to California State University \tMonterey Bay.</string>
     <string name="map_button">Campus Map</string>
     <string name="dining_button">Dinings</string>
     <string name="parking_button">Parking Lots</string>
