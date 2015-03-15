@@ -1,6 +1,5 @@
 package com.example.seansabour.mapsample;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -56,10 +55,11 @@ public class DiningActivity extends ActionBarActivity implements View.OnClickLis
     }
    public void onClick(View v) {
 
-        if (v.getId() == R.id.OE_button) {
+        /*if (v.getId() == R.id.OE_button) {
             Intent i = new Intent(this, OtterExpressActivity.class);
             startActivity(i);
-        } /*else if (v.getId() == R.id.DC_button) {
+
+        } else if (v.getId() == R.id.DC_button) {
             Intent i = new Intent(this, DiningCommonsActivity.class);
             startActivity(i);
         }
