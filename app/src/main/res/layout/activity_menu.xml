@@ -11,12 +11,12 @@
         android:layout_height="206dp"
         android:id="@+id/imageView"
         android:src="@drawable/otter"
-        android:layout_weight="0.47"/>
+        android:layout_weight="0.20" />
 
     <TextView
         android:id="@+id/about_textview"
         android:layout_width="318dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="@string/menu_about"
         android:textSize="35sp"
         android:textColor="#002A4E"
@@ -25,7 +25,8 @@
         android:shadowColor="#E0E2EF"
         android:shadowDx="-2"
         android:shadowDy="-2"
-        android:shadowRadius="2"/>
+        android:shadowRadius="2"
+        android:layout_weight="0.20" />
 
     <Button
         android:id="@+id/map_button"
@@ -36,7 +37,8 @@
         android:textColor="#CFB53B"
         android:layout_margin="10dp"
         android:background = "@drawable/roundbutton"
-        android:typeface="serif"/>
+        android:typeface="serif"
+        android:layout_weight="0.20" />
 
     <Button
         android:id="@+id/dining_button"
@@ -47,7 +49,8 @@
         android:textSize="52sp"
         android:textColor="#CFB53B"
         android:layout_margin="10dp"
-        android:typeface="serif"/>
+        android:typeface="serif"
+        android:layout_weight="0.20" />
 
     <Button
         android:id="@+id/parking_button"
@@ -58,6 +61,7 @@
         android:textSize="50sp"
         android:textColor="#CFB53B"
         android:layout_margin="10dp"
-        android:typeface="serif"/>
+        android:typeface="serif"
+        android:layout_weight="0.20" />
 
 </LinearLayout>
