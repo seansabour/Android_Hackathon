@@ -9,7 +9,7 @@
     <string name="title_activity_parking">Parking</string>
 
 
-    <string name="menu_about">Welcome to California State University Monterey Bay.</string>
+    <string name="menu_about">Welcome to California State University Monterey Bay</string>
     <string name="map_button">Campus Map</string>
     <string name="dining_button">Dinings</string>
     <string name="parking_button">Parking Lots</string>
@@ -18,7 +18,6 @@
     <string name="DC_button">Dining Commons</string>
     <string name="Montes_button">Montes Restaurant</string>
     <string name="title_activity_dining">DiningActivity</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
